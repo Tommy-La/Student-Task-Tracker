@@ -1,6 +1,5 @@
-// TaskItem.tsx
 import React, { useContext } from 'react';
-import { TaskContext } from '../context/TaskContext';
+import { TaskContext } from '../context/TaskContextProvider';
 
 const TaskItem = ({ task }) => {
   const { toggleTaskStatus, deleteTask } = useContext(TaskContext);

@@ -1,15 +1,10 @@
-// TaskForm.tsx
-// A form to add new task to the task list
-
-
 import React, { useState, useContext } from 'react';
-import { TaskContext } from '../context/TaskContext';
+import { TaskContext } from '../context/TaskContextProvider';
 
 const TaskForm = (props) => {
   const [taskName, setTaskName] = useState('');
   const [description, setDescription] = useState('');
-  const id = 0; // Temporary ID, will be generate by Database
-  // Accessing the TaskContext
+  
   const { addTask } = useContext(TaskContext);
 
   // Handle form submission
@@ -24,7 +19,6 @@ const TaskForm = (props) => {
 
     // Create a new task object
     const newTask = {
-      id,
       taskName,  // Update property name to match what addTask expects
       description,
       status: 'Incomplete',  // Assuming you have a status property
@@ -46,6 +40,7 @@ const TaskForm = (props) => {
           type="text"
           value={taskName}
           onChange={(e) => setTaskName(e.target.value)}
+          className='text-black'
         />
       </label>
 

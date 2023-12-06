@@ -2,7 +2,7 @@
 import React from 'react';
 import TaskForm from '../components/TaskForm';
 import TaskList from '../components/TaskList';
-import TaskContextProvider from '@/context/TaskContext';
+import TaskContextProvider from '../context/TaskContextProvider';
 
 const Page = () => {
   return (
