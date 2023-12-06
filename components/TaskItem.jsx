@@ -2,16 +2,7 @@
 import React, { useContext } from 'react';
 import { TaskContext } from '../context/TaskContext';
 
-interface TaskItemProps {
-  task: {
-    id: number;
-    taskName: string;
-    description: string;
-    status: string;
-  };
-}
-
-const TaskItem: React.FC<TaskItemProps> = ({ task }) => {
+const TaskItem = ({ task }) => {
   const { toggleTaskStatus, deleteTask } = useContext(TaskContext);
 
   const handleDeleteTask = () => {

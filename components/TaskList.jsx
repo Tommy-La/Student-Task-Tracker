@@ -1,11 +1,9 @@
-// TaskList.tsx
-// Call TaskItem to render a TaskList
 
 import React, { useContext } from 'react';
 import TaskItem from './TaskItem';
 import { TaskContext } from '../context/TaskContext';
 
-const TaskList: React.FC = () => {
+const TaskList = () => {
   const { tasks } = useContext(TaskContext);
 
   return (

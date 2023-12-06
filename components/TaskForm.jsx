@@ -5,19 +5,15 @@
 import React, { useState, useContext } from 'react';
 import { TaskContext } from '../context/TaskContext';
 
-interface TaskFormProps {
-  // You can define any props specific to your needs here
-}
-
-const TaskForm: React.FC<TaskFormProps> = (props) => {
-  const [taskName, setTaskName] = useState<string>('');
-  const [description, setDescription] = useState<string>('');
+const TaskForm = (props) => {
+  const [taskName, setTaskName] = useState('');
+  const [description, setDescription] = useState('');
   const id = 0; // Temporary ID, will be generate by Database
   // Accessing the TaskContext
   const { addTask } = useContext(TaskContext);
 
   // Handle form submission
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     // Validation (add more as needed)
