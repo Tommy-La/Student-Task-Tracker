@@ -3,30 +3,34 @@ import React, { useContext } from 'react';
 import { TaskContext } from '../context/TaskContext';
 
 interface TaskItemProps {
-  task: { id: string; name: string; completed: boolean };
+  task: {
+    id: number;
+    taskName: string;
+    description: string;
+    status: string;
+  };
 }
 
 const TaskItem: React.FC<TaskItemProps> = ({ task }) => {
-  const { updateTask, deleteTask } = useContext(TaskContext);
-
-  const handleToggleCompletion = () => {
-    updateTask(task.id, { ...task, completed: !task.completed });
-  };
+  const { toggleTaskStatus, deleteTask } = useContext(TaskContext);
 
   const handleDeleteTask = () => {
     deleteTask(task.id);
   };
 
   return (
-    <li>
-      <input
-        type="checkbox"
-        checked={task.completed}
-        onChange={handleToggleCompletion}
-      />
-      <span>{task.name}</span>
-      <button onClick={handleDeleteTask}>Delete</button>
-    </li>
+    <div>
+      <h3>{task.taskName}</h3>
+      <p>{task.description}</p>
+      <p>Status: {task.status}</p>
+      <button onClick={() => toggleTaskStatus(task.id)}>Toggle Status</button>
+      <button
+        className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600"
+        onClick={handleDeleteTask}
+      >
+        Delete
+      </button>
+    </div>
   );
 };
 
