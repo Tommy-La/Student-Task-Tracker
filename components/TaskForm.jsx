@@ -33,14 +33,14 @@ const TaskForm = (props) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
+    <form onSubmit={handleSubmit} className="max-w-2xl mx-auto mt-8">
+      <label className="block text-sm font-semibold mb-2">
         Task Name:
         <input
           type="text"
           value={taskName}
           onChange={(e) => setTaskName(e.target.value)}
-          className='text-black'
+          className='text-black border border-gray-300 p-2 w-full'
         />
       </label>
 
@@ -49,10 +49,13 @@ const TaskForm = (props) => {
         <textarea
           value={description}
           onChange={(e) => setDescription(e.target.value)}
+          className='text-black border border-gray-300 p-2 w-full'
         />
       </label>
 
-      <button type="submit">Add Task</button>
+      <button type="submit"         className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+        Add Task
+        </button>
     </form>
   );
 };

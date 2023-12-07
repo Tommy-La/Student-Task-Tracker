@@ -7,12 +7,14 @@ const TaskList = () => {
   const { tasks } = useContext(TaskContext);
 
   return (
-    <div>
-      <h2>Task List</h2>
+    <div >
+      <h2 className="max-w-2xl mx-auto mt-8">Task List</h2>
       {tasks.length === 0 ? (
-        <p>No tasks available.</p>
+        <p lassName="max-w-2xl mx-auto mt-8"
+        >
+          No tasks available.</p>
       ) : (
-        <ul>
+        <ul className="max-w-2xl mx-auto mt-8">
           {tasks.map((task) => (
             <li key={task.id}>
               <TaskItem task={task} />
