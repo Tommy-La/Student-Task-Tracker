@@ -7,7 +7,7 @@ const TaskList = () => {
   const { tasks } = useContext(TaskContext);
 
   return (
-    <div >
+    <div className='' >
       <h2 className="max-w-2xl mx-auto mt-8">Task List</h2>
       {tasks.length === 0 ? (
         <p className="max-w-2xl mx-auto mt-8"
